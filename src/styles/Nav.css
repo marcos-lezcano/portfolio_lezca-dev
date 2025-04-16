@@ -1,0 +1,142 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--nav-width);
+    height: 100vh;
+    background-color: var(--dark-navy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    z-index: 11;
+}
+
+.header.scrolled {
+    box-shadow: 0 10px 30px -10px var(--navy-shadow);
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: var(--lightest-slate);
+    font-family: var(--font-mono);
+    counter-reset: item 0;
+}
+
+.logo {
+    margin-bottom: 2rem;
+}
+
+.logo a {
+    color: var(--green);
+    width: 42px;
+    height: 42px;
+    position: relative;
+    z-index: 1;
+    transition: var(--transition);
+}
+
+.logo a:hover {
+    transform: translateY(-3px);
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-links ol {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: 1rem;
+}
+
+.nav-links ol li {
+    width: 100%;
+}
+
+.nav-links ol li a {
+    display: inline-block;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    color: var(--slate);
+    position: relative;
+    transition: var(--transition);
+    width: 100%;
+    padding: 0.5rem 2rem;
+    font-size: var(--fz-xs);
+}
+
+.nav-links ol li a:hover,
+.nav-links ol li a.active {
+    color: var(--green);
+    background-color: var(--light-navy);
+}
+
+.nav-links ol li a span {
+    color: var(--green);
+    font-size: var(--fz-xxs);
+    margin-right: 0.5rem;
+}
+
+.resume-button {
+    color: var(--green);
+    background-color: transparent;
+    border: 1px solid var(--green);
+    border-radius: var(--border-radius);
+    padding: 0.75rem 1rem;
+    font-size: var(--fz-xs);
+    font-family: var(--font-mono);
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 2rem;
+}
+
+.resume-button:hover {
+    background-color: var(--green-tint);
+}
+
+@media (max-width: 768px) {
+    .header {
+        width: 100%;
+        height: var(--nav-height);
+        flex-direction: row;
+        padding: 0 2rem;
+    }
+
+    .nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .logo {
+        margin-bottom: 0;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 2rem;
+    }
+
+    .nav-links ol {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .nav-links ol li a {
+        padding: 0.5rem 1rem;
+    }
+}
